@@ -1,0 +1,50 @@
+<head>
+  <title>Add Location</title>
+</head>
+
+
+<div class="topnav">
+  <a href="/therapists">Therapists</a>
+  <a href="/clients">Clients</a>
+  <a href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a href="/services">Services</a>
+  <a class="active" href="/locations">Locations</a>
+  <a href="/appointments">Appointments</a>
+</div>
+
+
+<form id="add-location" action="/locations" method="post">
+  <fieldset>
+    <legend>
+      <h1> Add a New Location</h1>
+    </legend>
+      Location Name: <input type="text" name="l_name" value="{{l_name}}"><br>
+      Street Address: <input type="text" name="address_st" value="{{address_st}}"><br>
+      City: <input type="text" name="address_city" value="{{address_city}}">
+      State: <input type="text" name="address_state" value="{{address_state}}">
+      Zip: <input type="text" name="address_zip" value="{{address_zip}}"><br>
+      <input type="submit" value="Add Location">
+  </fieldset>
+</form>
+
+
+
+
+<table>
+  <br><br><h2>All Locations</h2>
+    <thead>
+        <th id="box">Location Name</th>
+    </thead>
+    <tbody>
+        {{#each locations}}
+        <tr>
+            <td id="box">{{l_name}}</td>
+            <td id="box">{{address_st}}</td>
+            <td id="box">{{address_city}}</td>
+            <td id="box">{{address_state}}</td>
+            <td id="box">{{address_zip}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>

@@ -1,0 +1,24 @@
+<head>
+  <title>Update Location</title>
+</head>
+
+
+<form id="update-location" action="/locations" method="post">
+  <fieldset>
+    <legend>
+      <h1> Update Location {{location.name}}</h1>
+    </legend>
+
+    Re-name: <select name="name_first">
+        {{#each location.name}}
+        <option value="{{id}}">{{location.name}}</option>
+        {{/each}}
+    </select><br>
+
+    To: <input type="text" name="location" required>
+
+    <div class="button">
+      <input type="submit" value="Update">
+    </div>
+  </fieldset>
+</form>

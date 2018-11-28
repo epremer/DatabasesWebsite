@@ -1,0 +1,26 @@
+<head>
+  <title>Delete Client</title>
+</head>
+
+
+<form id="delete-client" action="/clients" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Client {{client.name_first}} {{client.name_last}}</h1>
+    </legend>
+
+    First Name: <select name="name_first">
+        {{#each client.name_first}}
+        <option value="{{id}}">{{client.name_first}}</option>
+        {{/each}}
+    </select><br>
+    Last Name: <select name="name_last">
+        {{#each client.name_last}}
+        <option value="{{id}}">{{client.name_last}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Delete">
+    </div>
+  </fieldset>
+</form>

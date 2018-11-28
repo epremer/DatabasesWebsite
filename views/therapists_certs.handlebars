@@ -1,0 +1,29 @@
+<head>
+  <title>Update a Massage Therapist's Certifications</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+
+
+<div class="requested_info">
+    <table>
+        <div id="info_header">All Massage Therapist's Certifications</div>
+        <thead>
+            <th></th>
+            <th>Massage Therapist</th>
+            <th>Cert Name</th>
+            <th>Date Acquired</th>
+            <th>Date Expires</th>
+        </thead>
+        <tbody>
+            {{#each certs}}
+            <tr>
+                <td><a href="/certs/{{id}}">Update</a></td>
+                <td>{{t_name_first}}</td>
+                <td>{{c_name}}</td>
+                <td>{{date_acquired}}</td>
+                <td>{{date_expires}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+</table>
+<div> <!-- requested_info -->

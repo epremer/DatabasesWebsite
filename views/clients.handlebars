@@ -1,0 +1,67 @@
+<head>
+  <title>Add Client</title>
+</head>
+
+
+<div class="topnav">
+  <a href="/therapists">Therapists</a>
+  <a class="active" href="/clients">Clients</a>
+  <a href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a href="/services">Services</a>
+  <a href="/locations">Locations</a>
+  <a href="/appointments">Appointments</a>
+</div>
+
+
+    <table>
+        <form id="add-client" action="/clients" method="post">
+          <fieldset>
+            <legend>
+              <h2> Add a New Client</h2>
+            </legend>
+            First Name: <input type="text" name="c_name_first" value="{{c_name_first}}"><br>
+            Last Name: <input type="text" name="c_name_last" value="{{c_name_last}}"><br>
+            Email: <input type="email" name="email" value="{{email}}"><br>
+            Phone: <input type="number" name="phone" value="{{phone}}">(please numbers only, no dashes)<br>
+            Street Address: <input type="text" name="address_st" value="{{address_st}}"><br>
+            City: <input type="text" name="address_city" value="{{address_city}}">
+            State: <input type="text" name="address_state" value="{{address_state}}">
+            Zip: <input type="text" name="address_zip" value="{{address_zip}}"><br>
+            Date of Birth: <input type="date" name="dob"><br>
+            <input type="submit" value="Add">
+          </fieldset>
+        </form>
+    </table>
+
+
+
+    <table>
+      <br><br><h2>All Clients</h2>
+        <thead>
+            <th id="box">First Name</th>
+            <th id="box">Last Name</th>
+            <th id="box">Email</th>
+            <th id="box">Phone</th>
+            <th id="box">Street Address</th>
+            <th id="box">City</th>
+            <th id="box">State</th>
+            <th id="box">Zip</th>
+            <th id="box">DOB</th>
+        </thead>
+        <tbody>
+            {{#each clients}}
+            <tr>
+                <td id="box">{{c_name_first}}</td>
+                <td id="box">{{c_name_last}}</td>
+                <td id="box">{{email}}</td>
+                <td id="box">{{phone}}</td>
+                <td id="box">{{address_st}}</td>
+                <td id="box">{{address_city}}</td>
+                <td id="box">{{address_state}}</td>
+                <td id="box">{{address_zip}}</td>
+                <td id="box">{{dob}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+      </table>

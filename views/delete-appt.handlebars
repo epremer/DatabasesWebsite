@@ -1,0 +1,56 @@
+<head>
+  <title>Delete Appointment</title>
+</head>
+
+
+<form id="delete-appt" action="/appts" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Appointment</h1>
+    </legend>
+    Choose client:<br>
+    First Name: <select name="name_first">
+        {{#each client.name_first}}
+        <option value="{{id}}">{{client.name_first}}</option>
+        {{/each}}
+    </select><br>
+    Last Name: <select name="name_last">
+        {{#each client.name_last}}
+        <option value="{{id}}">{{client.name_last}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Search Appointments">
+    </div>
+  </fieldset>
+</form>
+
+
+
+<div class="requested_info">
+    <table>
+        <div id="info_header">All Appointments for client {{this.name_first}} {{this.name_last}}</div>
+        <thead>
+            <th></th>
+            <th>Visit #</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Therapist</th>
+            <th>Location</th>
+        </thead>
+        <tbody>
+            {{#each people}}
+            <tr>
+                <td><button onclick="deleteAppt({{id}})">Delete</button></td>
+                <td>{{appointment.visit_id}}</td>
+                <td>{{service.name}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td>{{therapist.name_first}}</td>
+                <td>{{location.name}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+<div> <!-- requested_info -->

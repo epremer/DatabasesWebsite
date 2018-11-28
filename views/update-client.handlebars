@@ -1,0 +1,55 @@
+<head>
+  <title>Update Client</title>
+</head>
+
+<form id="update-client" action="/clients" method="post">
+  <fieldset>
+    <legend>
+      <h1> Update {{client.name_first}} {{client.name_last}}</h1>
+    </legend>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">First Name</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each client.name_first}}>{{#each client.name_first}}{{/each}}</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Last Name</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a href="#"{{#each client.name_last}}>{{#each client.name_last}}{{/each}}</a>
+          </div>
+      </div>
+  </fieldset>
+</form>
+
+
+<div class="requested_info">
+    <table>
+        <div id="info_header">All Client Info</div>
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Address</th>
+        </thead>
+        <tbody>
+            {{#each people}}
+            <tr>
+                <td>{{name_first}}</td>
+                <td>{{name_last}}</td>
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+                <td>{{dob_m}} {{dob_d}} {{dob_yr}}</td>
+                <td>{{address_st}} {{address_city}}, {{address_city}}, {{address_zip}}</td>
+
+                <td><button onclick="deleteclient({{id}})">Delete</button></td>
+                <td><a href="/clients/{{id}}">Update</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+<div> <!-- requested_info -->

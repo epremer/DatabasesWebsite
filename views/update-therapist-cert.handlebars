@@ -1,0 +1,17 @@
+
+<head>
+  <title>Update Massage Therapist Certification</title>
+</head>
+
+      <table>
+          <form id="update-therapist-cert" action="/therapists" method="post">
+            <fieldset>
+              <legend>
+                <h1> Update {{therapists.c_name}} Certification for {{therapists.t_name_first}} {{therapists.t_name_last}}</h1>
+              </legend>
+              Date Cert Acquired: <input type="date" name="date_acquired" value="{{therapists.date_acquired}}" required><br>
+              Date Cert Expires: <input type="date" name="date_expires" value="{{therapists.date_expires}}"><br>
+            </fieldset>
+          </form>
+          <button onclick="updatetherapistcert({{therapists.t_therapist_id}}, {{therapists.c_cert_id}})">Update</button>
+      </table>

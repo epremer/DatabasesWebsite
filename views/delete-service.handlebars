@@ -1,0 +1,21 @@
+<head>
+  <title>Delete Service</title>
+</head>
+
+
+<form id="delete-service" action="/services" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Service {{service.name}}</h1>
+    </legend>
+
+    Delete: <select name="name">
+        {{#each service.name}}
+        <option value="{{id}}">{{service.name}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Delete">
+    </div>
+  </fieldset>
+</form>

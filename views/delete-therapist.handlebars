@@ -1,0 +1,26 @@
+<head>
+  <title>Delete Massage Therapist</title>
+</head>
+
+
+<form id="delete-therapist" action="/therapists" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Therapist {{therapist.therapist_id}}</h1>
+    </legend>
+
+    First Name: <select name="name_first">
+        {{#each therapist.name_first}}
+        <option value="{{therapist_id}}">{{therapist.name_first}}</option>
+        {{/each}}
+    </select><br>
+    Last Name: <select name="name_last">
+        {{#each therapist.name_last}}
+        <option value="{{therapist_id}}">{{therapist.name_last}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Delete">
+    </div>
+  </fieldset>
+</form>

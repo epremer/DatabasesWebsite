@@ -1,0 +1,21 @@
+<head>
+  <title>Delete Certification</title>
+</head>
+
+
+<form id="delete-certification" action="/certs" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Certification {{certification.name}}</h1>
+    </legend>
+
+    Delete: <select name="name">
+        {{#each certification.name}}
+        <option value="{{id}}">{{certification.name}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Delete">
+    </div>
+  </fieldset>
+</form>

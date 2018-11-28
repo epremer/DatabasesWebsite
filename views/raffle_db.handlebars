@@ -1,0 +1,64 @@
+<!--
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="public/css/main.css">
+  <title>FREE Massage | Enter HERE</title>
+<head>
+
+
+<body>
+-->
+  <div id="header">
+    <h1 class="page_header">Inspired Health & Fitness Expo</h1>
+
+    <!-- Thrive logo -->
+    <!-- Edna Valley Massage logo -->
+    <img class="evmLogo" src="public/images/evm_logo.jpg">
+    <img class="thriveLogo" src="public/images/thrive_logo.png">
+  </div>
+
+    <h3 class="hook">ENTER FOR A CHANCE TO WIN A RAFFLE BASKET</h3>
+    <h5 class="hook_desciption">(A $200 value, including a free massage. Two baskets available.)</h5>
+
+    <div class="entry_form">
+      <form method="post" action="/successful_entry" class="entry_form_inner">
+        <fieldset>
+          <legend class="client_info">ENTER HERE</legend>
+            First Name:<span id="asterisk">*</span> <input type="text" name="client_fname" required><br>
+            Last Name:<span id="asterisk">*</span> <input type="text" name="client_lname" required><br>
+            Phone:<span id="asterisk">*</span> <input type="tel" name="client_phone" required><br>
+            Email:<span id="asterisk">*</span> <input type="email" name="client_email" required><br>
+          <div class="client_info who_massaged">Who massaged you today?<span id="asterisk">*</span>
+            <!-- include radio buttons with thumbnail headshot/name of each therapist -->
+            <label>
+              <input type="radio" name="massager" value="lizz_headshot" required/>
+                Lizz
+                <img class="headshot" src="public/images/image_Lizz.jpg">
+            </label>
+            <label>
+              <input type="radio" name="massager" value="elaine_headshot" />
+                Elaine
+                <img class="headshot" src="public/images/image_Elaine.jpg">
+            </label>
+          </div>
+          <div>
+            <input type="checkbox" name="contact-me" class="contact" value="contact-me" checked>
+            Please contact me regarding $15 off my first session.
+          </div>
+          <div>
+            <input type="submit" value="ENTER ME TO WIN!">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <footer>
+      <div class="footer_msg">
+        Designed and written by Lizz Premer, 2018
+      </div>
+    </footer>
+<!--
+</body>
+
+</html>
+-->

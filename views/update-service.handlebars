@@ -1,0 +1,23 @@
+<head>
+  <title>Update Service</title>
+</head>
+
+<form id="update-service" action="/services" method="post">
+  <fieldset>
+    <legend>
+      <h1> Update {{service.name}}</h1>
+    </legend>
+
+    Re-name: <select name="name">
+        {{#each service.name}}
+        <option value="{{id}}">{{service.name}}</option>
+        {{/each}}
+    </select><br>
+
+    To: <input type="text" name="service" required>
+
+    <div class="button">
+      <input type="submit" value="Update">
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,42 @@
+<head>
+  <title>Add Certification</title>
+</head>
+
+
+<div class="topnav">
+  <a href="/therapists">Therapists</a>
+  <a href="/clients">Clients</a>
+  <a class="active" href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a href="/services">Services</a>
+  <a href="/locations">Locations</a>
+  <a href="/appointments">Appointments</a>
+</div>
+
+
+<form id="add-cert" action="/certs" method="post">
+  <fieldset>
+    <legend>
+      <h1> Add a Certification Type</h1>
+    </legend>
+      Certification Name: <input type="text" name="c_name" value="{{c_name}}" required><br>
+      <input type="submit" value="Add">
+  </fieldset>
+</form>
+
+
+
+
+<table>
+  <br><br><h2>All Certifications</h2>
+    <thead>
+        <th id="box">Certification Name</th>
+    </thead>
+    <tbody>
+        {{#each certs}}
+        <tr>
+            <td id="box">{{c_name}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>

@@ -1,0 +1,40 @@
+<head>
+  <title>Add Service</title>
+</head>
+
+
+<div class="topnav">
+  <a href="/therapists">Therapists</a>
+  <a href="/clients">Clients</a>
+  <a href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a class="active" href="/services">Services</a>
+  <a href="/locations">Locations</a>
+  <a href="/appointments">Appointments</a>
+</div>
+
+
+<form id="add-service" action="/services" method="post">
+  <fieldset>
+    <legend>
+      <h1> Add a New Service</h1>
+    </legend>
+      Service Name: <input type="text" name="s_name" value="{{s_name}}"><br>
+      <input type="submit" value="Add Service">
+  </fieldset>
+</form>
+
+
+<table>
+  <br><br><h2>All Services</h2>
+    <thead>
+        <th id="box">Service Name</th>
+    </thead>
+    <tbody>
+        {{#each services}}
+        <tr>
+            <td id="box">{{s_name}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>

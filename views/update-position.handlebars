@@ -1,0 +1,23 @@
+<head>
+  <title>Update Position</title>
+</head>
+
+<form id="update-position" action="/positions" method="post">
+  <fieldset>
+    <legend>
+      <h1> Update {{position.name}}</h1>
+    </legend>
+
+    Re-name: <select name="name">
+        {{#each position.name}}
+        <option value="{{id}}">{{position.name}}</option>
+        {{/each}}
+    </select><br>
+
+    To: <input type="text" name="position" required>
+
+    <div class="button">
+      <input type="submit" value="Update">
+    </div>
+  </fieldset>
+</form>

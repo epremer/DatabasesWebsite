@@ -1,0 +1,131 @@
+<head>
+  <title>Add Appointment</title>
+</head>
+
+
+<div class="topnav">
+  <a href="/therapists">Therapists</a>
+  <a href="/clients">Clients</a>
+  <a href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a href="/services">Services</a>
+  <a href="/locations">Locations</a>
+  <a class="active" href="/appointments">Appointments</a>
+</div>
+
+
+<!--
+
+<table>
+    <form id="add-appt" action="/appointments" method="post">
+      <fieldset>
+        <legend>
+          <h2> Add an Appointment</h2>
+        </legend>
+        Massage Therapist: <select name="therapist" id="therapist-selector">
+          {{#each therapists}}
+          <option value="{{t_therapist_id}}">{{t_name_first}} {{t_name_last}}</option>
+          {{/each}}
+        </select><br>
+        Certification: <select name="certs" id="cert-selector">
+          {{#each certs}}
+          <option value="{{c_cert_id}}">{{c_name}}</option>
+          {{/each}}
+        </select><br>
+        Date Cert Acquired: <input type="date" name="date_acquired" required><br>
+        Date Cert Expires: <input type="date" name="date_expires"><br>
+        <input type="submit" value="Assign Cert">
+      </fieldset>
+    </form>
+</table>
+
+
+
+<form id="add-appt" action="/appointments" method="post">
+  <fieldset>
+    <legend>
+      <h1> Add a New Appointment</h1>
+    </legend>
+
+      First Name: <select name="client">
+          {{#each clients}}
+          <option value="{{c_client_id}}">{{c_name_first}}</option>
+          {{/each}}
+      </select><br>
+
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">First Name</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each clients}}>{{#each c_name_first}}{{/each}}</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Last Name</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each c_name_last}}>{{#each c_name_last}}{{/each}}</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Service</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each services}}>{{#each s_name}}{{/each}}</a>
+          </div>
+      </div>
+
+      Date of Service: <input type="date" required><br>
+      Time of Service: <input type="time" required><br>
+
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Massage Therapist</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each t_name_first}}>{{#each therapist.name_first}}{{/each}}</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Location</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"{{#each location.name}}>{{#each location.name}}{{/each}}</a>
+          </div>
+      </div>
+
+      <input type="submit" value="Add Client">
+  </fieldset>
+</form>
+
+
+<div class="requested_info">
+    <table>
+        <div id="info_header">All Appointments for client {{this.name_first}} {{this.name_last}}</div>
+        <thead>
+            <th>Visit #</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Therapist</th>
+            <th>Location</th>
+        </thead>
+        <tbody>
+            {{#each people}}
+            <tr>
+                <td>{{appointment.visit_id}}</td>
+                <td>{{service.name}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td>{{therapist.name_first}}</td>
+                <td>{{location.name}}</td>
+
+                <td><button onclick="deleteappointment({{id}})">Delete</button></td>
+                <td><a href="/appointments/{{id}}">Update</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+<div>
+
+
+-->

@@ -1,0 +1,23 @@
+
+<head>
+  <title>Update Therapist</title>
+</head>
+
+      <table>
+          <form id="update-therapist" action="/therapists" method="post">
+            <fieldset>
+              <legend>
+                <h1> Update {{therapists.t_name_first}} {{therapists.t_name_last}}</h1>
+              </legend>
+              First Name: <input type="text" name="t_name_first" value="{{therapists.t_name_first}}"><br>
+              Last Name: <input type="text" name="t_name_last" value="{{therapists.t_name_last}}"><br>
+              Position: <select multiple name="position" id="position-selector">
+                {{#each positions}}
+                <option value="{{p_position_id}}">{{p_name}}</option>
+                {{/each}}
+              </select><br>
+            </fieldset>
+          </form>
+          <button onclick="updatetherapist({{therapists.t_therapist_id}})">Update</button>
+      </table>
+<script defer>selectedposition({{therapists.p_position_id}});</script>  <!-- for keeping current selected data selected -->

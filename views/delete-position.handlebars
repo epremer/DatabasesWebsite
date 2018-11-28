@@ -1,0 +1,21 @@
+<head>
+  <title>Delete Position</title>
+</head>
+
+
+<form id="delete-position" action="/positions" method="post">
+  <fieldset>
+    <legend>
+      <h1> Delete Position {{position.name}}</h1>
+    </legend>
+
+    Delete: <select name="name">
+        {{#each position.name}}
+        <option value="{{id}}">{{position.name}}</option>
+        {{/each}}
+    </select><br>
+    <div class="button">
+      <input type="submit" value="Delete">
+    </div>
+  </fieldset>
+</form>

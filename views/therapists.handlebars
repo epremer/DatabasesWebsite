@@ -1,0 +1,87 @@
+<head>
+  <title>Add Therapist</title>
+</head>
+
+
+<div class="topnav">
+  <a class="active" href="/therapists">Therapists</a>
+  <a href="/clients">Clients</a>
+  <a href="/certs">Certification</a>
+  <a href="/positions">Positions</a>
+  <a href="/services">Services</a>
+  <a href="/locations">Locations</a>
+  <a href="/appointments">Appointments</a>
+</div>
+
+
+    <table>
+        <form id="add-therapist" action="/therapists" method="post">
+          <fieldset>
+            <legend>
+              <h2> Add a New Massage Therapist</h2>
+            </legend>
+            First Name: <input type="text" name="t_name_first" value="{{t_name_first}}"><br>
+            Last Name: <input type="text" name="t_name_last" value="{{t_name_last}}"><br>
+            Position: <select multiple name="position" id="position-selector">
+              {{#each positions}}
+              <option value="{{p_position_id}}">{{p_name}}</option>
+              {{/each}}
+            </select><br>
+            <input type="submit" value="Add">
+          </fieldset>
+        </form>
+    </table>
+
+    <!-- assign a cert to this therapist -->
+    <table>
+        <form id="add-therapist-cert" action="/therapists/add" method="post">
+          <fieldset>
+            <legend>
+              <h2> Assign a Certification to a Massage Therapist</h2>
+            </legend>
+            Massage Therapist: <select name="therapist" id="therapist-selector">
+              {{#each therapists}}
+              <option value="{{t_therapist_id}}">{{t_name_first}} {{t_name_last}}</option>
+              {{/each}}
+            </select><br>
+            Certification: <select name="certs" id="cert-selector">
+              {{#each certs}}
+              <option value="{{c_cert_id}}">{{c_name}}</option>
+              {{/each}}
+            </select><br>
+            Date Cert Acquired: <input type="date" name="date_acquired" required><br>
+            Date Cert Expires: <input type="date" name="date_expires"><br>
+            <input type="submit" value="Assign Cert">
+          </fieldset>
+        </form>
+    </table>
+
+    <table>
+      <br><br><h2>All Massage Therapists</h2>
+        <thead>
+            <th id="box">First Name</th>
+            <th id="box">Last Name</th>
+            <th id="box">Position</th>
+            <th id="box">Certification</th>
+            <th id="box">Date Cert Acquired</th>
+            <th id="box">Date Cert Expires</th>
+            <th colspan="5">(Only click "Update Therapist's Certification" on a line with a certification)</th>
+        </thead>
+        <tbody>
+            {{#each therapistsposandcert}}
+            <tr>
+                <td id="box">{{t_name_first}}</td>
+                <td id="box">{{t_name_last}}</td>
+                <td id="box">{{p_name}}</td>
+                <td id="box">{{c_name}}</td>
+                <td id="box">{{date_acquired}}</td>
+                <td id="box">{{date_expires}}</td>
+                <td><a href="/therapists/{{t_therapist_id}}" class="button">Update<br>Therapist</a></td>
+                <td><a href="/therapists/{{t_therapist_id}}/c/{{c_cert_id}}" class="button">Update Therapist's<br>Certification</a></td>
+                <td><button onclick="deletetherapist({{t_therapist_id}})">Delete<br>This Therapist</button></td>
+                <td><button onclick="deleteposition({{t_therapist_id}},{{p_position_id}})">Delete Therapist's<br>Position</button></td>
+                <td><button onclick="deletecert({{t_therapist_id}},{{c_cert_id}})">Delete Therapist's<br>Cert</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+      </table>

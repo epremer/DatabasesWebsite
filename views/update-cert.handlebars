@@ -1,0 +1,52 @@
+<head>
+  <title>Update Certification</title>
+</head>
+
+<form id="update-cert" action="/certs" method="post">
+  <fieldset>
+    <legend>
+      <h1> Update a Certification</h1>
+    </legend>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Massage Therapist First Name</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#"{{#each therapist.name_first}}>{{#each therapist.name_first}}{{/each}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Massage Therapist Last Name</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#"{{#each therapist.name_last}}>{{#each therapist.name_last}}{{/each}}</a>
+        </div>
+    </div>
+      Certfication name: <input type="text" name="name" required><br>
+      Date Acquired: <input type="date" name="date_acquired" required><br>
+      Date Expires: <input type="date" name="date_expires"><br>
+
+      <input type="submit" value="Add">
+  </fieldset>
+</form>
+
+
+<div class="requested_info">
+    <table>
+        <div id="info_header">All Certification Info</div>
+        <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Address</th>
+        </thead>
+        <tbody>
+            {{#each people}}
+            <tr>
+                <td><a href="/certs/{{id}}">Update</a></td>
+                <td>{{name_first}}</td>
+                <td>{{address_st}} {{address_city}}, {{address_city}}, {{address_zip}}</td>
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+<div> <!-- requested_info -->
